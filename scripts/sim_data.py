@@ -4,7 +4,7 @@ import numpy as np
 # defining a new simulated Dataset
 class Sim_Dataset(Dataset):
     '''
-    n_patients = number of patients for which the phenotype is simulated, default is 160 000 as it was in the FuncRVP preprint
+    n_patients = number of patients for which the phenotype is simulated, default is 2 000 
     n_genes = number of tested genes for which the beta and functional embedding should be simulated, default 20 000 as usually is
     n_dim = dimension of the functional embedding, defualt 256 to which the func. embedding was reduced to in FuncRVP preprint
     '''
