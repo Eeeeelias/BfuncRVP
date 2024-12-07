@@ -9,7 +9,9 @@ class SimulatedDataset(Dataset):
     :param repeat: how many genes should have the same positive and negative beta and share embedding dimension (2*repeat)
     """
 
-    def __init__(self, n_patients = 2000, n_genes = 20000, n_dim = 256, repeat = 5):
+    def __init__(self, n_patients = 2000, n_genes = 20000, n_dim = 256, repeat = 5, random_seed = None):
+        if random_seed:
+            np.random.seed(random_seed)
         self.__n_patients = n_patients
         self.repeat = repeat
         self.betas = self.simulate_gt_betas(n_genes)
