@@ -13,6 +13,7 @@ class SimulatedDataset(Dataset):
         if random_seed:
             np.random.seed(random_seed)
         self.__n_patients = n_patients
+        self.n_genes = n_genes
         self.repeat = repeat
         self.betas = self.simulate_gt_betas(n_genes)
         self.g_matrix = self.simulate_g_matrix(n_patients, n_genes)
@@ -60,7 +61,7 @@ class SimulatedDataset(Dataset):
         phenotype_binary = (sigmoid(phenotype_raw) >= 0.5).astype(int)
         return phenotype_binary
 
-    def create_func_embeddings(self, n_genes, n_dim, n_shared_dim=30):
+    def create_func_embeddings(self, n_genes, n_dim, n_shared_dim=75):
         """
         :param n_genes: number of genes for which the functional embeddings should be simulated
         :param n_dim: dimension of the functional embeddings
