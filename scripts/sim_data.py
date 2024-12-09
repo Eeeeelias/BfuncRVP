@@ -61,7 +61,7 @@ class SimulatedDataset(Dataset):
         phenotype_binary = (sigmoid(phenotype_raw) >= 0.5).astype(int)
         return phenotype_binary
 
-    def create_func_embeddings(self, n_genes, n_dim, n_shared_dim=75):
+    def create_func_embeddings(self, n_genes, n_dim, n_shared_dim=80):
         """
         :param n_genes: number of genes for which the functional embeddings should be simulated
         :param n_dim: dimension of the functional embeddings
